@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/_head.html')
+<body class="front_body map_api_body">
+	<div class="page_wrap">
+		@@include('./include/_header.html')
+		<section class="middle_wrap">
+			@@include('./include/_left.html')
+			<div class="middle_right_cols">
+				<div class="pagemap_list_wrap">
+					<ul class="pagemap_list">
+						<li><a href="#" class="ico_pagemap_home"><span class="hdtext">HOME</span></a></li>
+						<li><a href="#" class="pagemap_menu">Media &amp; Press</a></li>
+						<li><a href="#" class="pagemap_menu emp">Promotional video</a></li>
+					</ul>
+				</div>
+				<div class="middle_right_title_wrap">
+					<h2 class="content_title">Promotional video</h2>
+				</div>
+				<div class="middle_right_content_wrap">
+					<div class="form_view_table_wrap">
+						<table class="form_view_table">
+							<colgroup>
+								<col style="width:140px" />
+								<col />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><span class="form_view_label">제목</span></th>
+									<td><input type="text" class="form_input" placeholder="제목"></td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">언어</span></th>
+									<td>
+										<div class="props_item_list_wrap">
+											<ul class="props_item_list">
+												<li>
+													<div class="props_item">
+														<input type="radio" id="lang_01" name="lang" class="props_form" checked>
+														<label for="lang_01" class="props_label">한국어</label>
+													</div>
+												</li>
+												<li>
+													<div class="props_item">
+														<input type="radio" id="lang_02" name="lang" class="props_form">
+														<label for="lang_02" class="props_label">영어</label>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">동영상 유형</span></th>
+									<td>
+										<div class="td_block_wrap" id="props_tab_wrap">
+											<div class="td_block">
+												<div class="props_item_list_wrap">
+													<ul class="props_item_list">
+														<li>
+															<div class="props_item">
+																<input type="radio" id="type_01" name="type" class="props_form" data-target="#type_01_cont" checked>
+																<label for="type_01" class="props_label">URL 첨부</label>
+															</div>
+														</li>
+														<li>
+															<div class="props_item">
+																<input type="radio" id="type_02" name="type" class="props_form" data-target="#type_02_cont">
+																<label for="type_02" class="props_label">파일 업로드</label>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="td_block">
+												<div class="td_cont active" id="type_01_cont">
+													<div class="block_table">
+														<div class="block_table_tr">
+															<div class="block_table_th"><span class="block_tb_label">URL</span></div>
+															<div class="block_table_td"><input type="text" class="form_input" placeholder="URL 주소 입력"></div>
+														</div>
+													</div>
+												</div>
+												<div class="td_cont" id="type_02_cont">
+													<div class="file_upload_zone">
+														<div class="file_upload_btn_row">
+															<div class="file_upload_item">
+																<i class="file_upload_ico"></i>
+																<span class="file_upload_text">파일찾기</span>
+																<input type="file" class="file_origin">
+															</div>
+															<p class="file_placeholder">*mp4, *avi, 1GB 이하 파일만 업로드 가능 파일 첨부는 최대 1개까지 가능합니다</p>
+														</div>
+														<div class="file_upload_data_row">
+															<ul class="upload_data_text_list">
+																<li>
+																	<div class="upload_data_text_item">
+																		<span class="upload_data_text">파일명.mp4</span>
+																		<button type="button" class="btn_upload_del"></button>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_submit_row">
+						<a href="#" class="btn_box big"><span class="btn_box_text">취소</span></a>
+						<a href="#" class="btn_box big primary"><i class="ico_check"></i><span class="btn_box_text">등록</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		@@include('./include/_footer.html')
+
+		<script>
+			menuRock("#menu02 , #menu02_02");
+
+			propsTab();
+			function propsTab(){
+				const props_tab_wrap = document.querySelector("#props_tab_wrap");
+				const props_tab_cont = props_tab_wrap.querySelectorAll(".td_cont");
+				const props_tab = props_tab_wrap.querySelectorAll("[data-target]");
+				props_tab.forEach((item)=>{
+					item.addEventListener("click",(e)=>{
+						const thisItem = e.currentTarget;
+						const thisTarget = document.querySelector(thisItem.dataset.target);
+						if(!!thisTarget){
+							props_tab_cont.forEach((item)=>{
+								item.classList.remove("active");
+							})
+							if(item.checked){
+								thisTarget.classList.add("active");
+							}
+						}
+					});
+				})
+			}
+
+			// file upload
+			const file_upload_zone = document.querySelectorAll(".file_upload_zone");
+			if(!!file_upload_zone){
+				file_upload_zone.forEach((item)=>{
+					const file_upload_item = item.querySelector(".file_origin");
+					file_upload_item.addEventListener("change",()=>{
+						item.querySelector(".file_upload_data_row").style.display = "block";
+					});
+				});
+			}
+
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			
+		</script>
+	</div>
+</body>
+</html>

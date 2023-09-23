@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/_head.html')
+<body class="front_body map_api_body">
+	<div class="page_wrap">
+		@@include('./include/_header.html')
+		<section class="middle_wrap">
+			@@include('./include/_left.html')
+			<div class="middle_right_cols">
+				<div class="pagemap_list_wrap">
+					<ul class="pagemap_list">
+						<li><a href="#" class="ico_pagemap_home"><span class="hdtext">HOME</span></a></li>
+						<li><a href="#" class="pagemap_menu">What we’ve done</a></li>
+						<li><a href="#" class="pagemap_menu emp">History</a></li>
+					</ul>
+				</div>
+				<div class="middle_right_title_wrap">
+					<h2 class="content_title">History</h2>
+					<div class="btn_boxtab_row">
+						<a href="#" class="btn_box small primary"><span class="btn_box_text">한국어</span></a>
+						<a href="#" class="btn_box small"><span class="btn_box_text">영어</span></a>
+					</div>
+				</div>
+				<div class="middle_right_content_wrap">
+					내용이 들어갑니다.
+				</div>
+			</div>
+		</section>
+		@@include('./include/_footer.html')
+
+		<div class="loading_layer">
+			<div class="loading_item_wrap">
+				<div class="loading_item">
+					<div class="loading_ico">
+						<div class="dot-spinner">
+							<div class="dot-spinner__dot"></div>
+							<div class="dot-spinner__dot"></div>
+							<div class="dot-spinner__dot"></div>
+							<div class="dot-spinner__dot"></div>
+							<div class="dot-spinner__dot"></div>
+							<div class="dot-spinner__dot"></div>
+							<div class="dot-spinner__dot"></div>
+							<div class="dot-spinner__dot"></div>
+						</div>
+					</div>
+					<div class="loading_text">LOADING</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			menuRock("#menu01 , #menu01_01");
+
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			if(url_2 === "loading"){
+				document.querySelector(".loading_layer").classList.add("active");
+			}
+		</script>
+	</div>
+</body>
+</html>

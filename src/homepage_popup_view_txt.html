@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/_head.html')
+<body class="front_body map_api_body">
+	<div class="page_wrap">
+		@@include('./include/_header.html')
+		<section class="middle_wrap">
+			@@include('./include/_left.html')
+			<div class="middle_right_cols">
+				<div class="pagemap_list_wrap">
+					<ul class="pagemap_list">
+						<li><a href="#" class="ico_pagemap_home"><span class="hdtext">HOME</span></a></li>
+						<li><a href="#" class="pagemap_menu">홈페이지 관리</a></li>
+						<li><a href="#" class="pagemap_menu emp">팝업</a></li>
+					</ul>
+				</div>
+				<div class="middle_right_title_wrap">
+					<h2 class="content_title">팝업</h2>
+				</div>
+				<div class="middle_right_content_wrap">
+					<div class="form_view_table_wrap">
+						<table class="form_view_table">
+							<colgroup>
+								<col style="width:140px" />
+								<col style="width:35%" />
+								<col style="width:140px" />
+								<col />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><span class="form_view_label">제목</span></th>
+									<td colspan="3"><div class="form_view_data">제목입니다.</div></td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">URL</span></th>
+									<td colspan="3"><div class="form_view_data"><a href="#" class="btn_textlink type2">URL.com</a></div></td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">게시 기간</span></th>
+									<td colspan="3"><div class="form_view_data">2023.06.02 ~ 2023.06.02</div></td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">작성자</span></th>
+									<td><div class="form_view_data">admin</div></td>
+									<th scope="row"><span class="form_view_label">작성일</span></th>
+									<td><div class="form_view_data">2023-04-12</div></td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">수정일</span></th>
+									<td colspan="3"><div class="form_view_data">2023-05-12</div></td>
+								</tr>
+								<tr>
+									<td colspan="4" class="colspan_td">
+										<div class="getdata_render_wrap">
+											- 기관명: ITS 미국<br>
+											- 체결일: 2023. 4. 26. (수)<br>
+											- 목적 : 양해각서(MOU) 체결을 통한 C-ITS 등 미래 모빌리티 분야 추진현황 공유 및 협력 강화
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_submit_row">
+						<a href="#" class="btn_box big gray"><span class="btn_box_text">삭제</span></a>
+						<a href="#" class="btn_box big primary"><span class="btn_box_text">수정</span></a>
+						<a href="#" class="btn_box big"><span class="btn_box_text">목록</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		@@include('./include/_footer.html')
+
+		<script>
+			menuRock("#menu03 , #menu03_01");
+
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			
+		</script>
+	</div>
+</body>
+</html>

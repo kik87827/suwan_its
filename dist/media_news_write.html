@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1440" />
+	<link rel="stylesheet" href="./assets/css/common.css" />
+	<script src="./assets/js/jquery-3.4.1.min.js"></script>
+	<script src="./assets/js/dynamicListener.min.js"></script>
+	<script src="./assets/js/swiper.min.js"></script>
+	<script src="./assets/js/tui-time-picker.js"></script>
+	<script src="./assets/js/tui-date-picker.js"></script>
+	<script src="./assets/js/ui.js"></script>
+
+	<title></title>
+</head>
+
+<body class="front_body map_api_body">
+	<div class="page_wrap">
+		<header class="header_wrap">
+			<div class="header_main_cols">
+				<h1 class="header_toplogo">
+					<a href="#" class="header_toplogo_link">
+						<img src="./assets/images/logo_symbol_w70x70@2x.png" class="toplogo_mark" alt="ITS">
+						<img src="./assets/images/logo_txt_w@2x.png" class="toplogo_copy" alt="강릉 ITS 세계총회">
+					</a>
+				</h1>
+			</div>
+			<div class="header_sub_cols">
+				<ul class="header_toputil_list">
+					<li><a href="#" class="toputil"><i class="ico_util ico_power"></i><span class="toputil_text">Logout</span></a></li>
+				</ul>
+			</div>
+		</header>
+		<section class="middle_wrap">
+			<div class="middle_left_cols">
+				<div class="middle_menu_list_wrap">
+					<ul class="middle_menu_list">
+						<li id="menu01">
+							<a href="#" class="middle_onemenu">
+								<i class="middle_ico"></i>
+								<span class="depth_text">What we’ve done 관리</span>
+							</a>
+							<div class="middle_twodepth_wrap">
+								<ul class="middle_twodepth_list">
+									<li id="menu01_01"><a href="#" class="middle_twomenu">History</a></li>
+								</ul>
+							</div>
+						</li>
+						<li id="menu02">
+							<a href="#" class="middle_onemenu">
+								<i class="middle_ico ico_media"></i>
+								<span class="depth_text">Media & Press 관리</span>
+							</a>
+							<div class="middle_twodepth_wrap">
+								<ul class="middle_twodepth_list">
+									<li id="menu02_01"><a href="#" class="middle_twomenu">News</a></li>
+									<li id="menu02_02"><a href="#" class="middle_twomenu">Promotional video</a></li>
+									<li id="menu02_03"><a href="#" class="middle_twomenu">Brochure</a></li>
+								</ul>
+							</div>
+						</li>
+						<li id="menu03">
+							<a href="#" class="middle_onemenu">
+								<i class="middle_ico ico_homepage"></i>
+								<span class="depth_text">홈페이지 관리</span>
+							</a>
+							<div class="middle_twodepth_wrap">
+								<ul class="middle_twodepth_list">
+									<li id="menu03_01"><a href="#" class="middle_twomenu">팝업</a></li>
+									<li id="menu03_02"><a href="#" class="middle_twomenu">문의처</a></li>
+									<li id="menu03_03"><a href="#" class="middle_twomenu">홈페이지 통계</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="middle_right_cols">
+				<div class="pagemap_list_wrap">
+					<ul class="pagemap_list">
+						<li><a href="#" class="ico_pagemap_home"><span class="hdtext">HOME</span></a></li>
+						<li><a href="#" class="pagemap_menu">Media &amp; Press</a></li>
+						<li><a href="#" class="pagemap_menu emp">News</a></li>
+					</ul>
+				</div>
+				<div class="middle_right_title_wrap">
+					<h2 class="content_title">News</h2>
+				</div>
+				<div class="middle_right_content_wrap">
+					<div class="form_view_table_wrap">
+						<table class="form_view_table">
+							<colgroup>
+								<col style="width:140px" />
+								<col />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><span class="form_view_label">제목</span></th>
+									<td><input type="text" class="form_input" placeholder="제목"></td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">언어</span></th>
+									<td>
+										<div class="props_item_list_wrap">
+											<ul class="props_item_list">
+												<li>
+													<div class="props_item">
+														<input type="radio" id="lang_01" name="lang" class="props_form" checked>
+														<label for="lang_01" class="props_label">한국어</label>
+													</div>
+												</li>
+												<li>
+													<div class="props_item">
+														<input type="radio" id="lang_02" name="lang" class="props_form">
+														<label for="lang_02" class="props_label">영어</label>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">이미지 업로드</span></th>
+									<td>
+										<div class="file_upload_zone">
+											<div class="file_upload_btn_row">
+												<div class="file_upload_item">
+													<i class="file_upload_ico"></i>
+													<span class="file_upload_text">파일찾기</span>
+													<input type="file" class="file_origin">
+												</div>
+												<p class="file_placeholder">.jpg/.png, 10MB 이하 이미지만 업로드 가능합니다. 이미지 첨부는 최대 1개까지 가능합니다.</p>
+											</div>
+											<div class="file_upload_data_row file_upload_imgdata_row">
+												<div class="upload_data_row">
+													<ul class="upload_data_list">
+														<li>
+															<div class="upload_data">
+																<div class="upload_data_render_cols">
+																	<div class="upload_data_render_item">
+																		<div class="udr_thum">
+																			<img src="./assets/images/img_280x200_01.png" alt="">
+																		</div>
+																		<div class="udr_spec">check.png</div>
+																	</div>
+																	<button type="button" class="btn_upload_data_delete"></button>
+																</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">파일 업로드</span></th>
+									<td>
+										<div class="file_upload_zone">
+											<div class="file_upload_btn_row">
+												<div class="file_upload_item">
+													<i class="file_upload_ico"></i>
+													<span class="file_upload_text">파일찾기</span>
+													<input type="file" class="file_origin">
+												</div>
+												<p class="file_placeholder">*pdf, *ppt, *pptx, 파일 첨부는 최대 5개까지 가능합니다.</p>
+											</div>
+											<div class="file_upload_data_row">
+												<ul class="upload_data_text_list">
+													<li>
+														<div class="upload_data_text_item">
+															<span class="upload_data_text">파일명.pdf</span>
+															<button type="button" class="btn_upload_del"></button>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="colspan_td">
+										<div class="editor_insert_wrap">
+											<div style="background:#ddd;display:flex;align-items:center;justify-content:center;min-height:300px;color:#000;">
+												EDITOR
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_submit_row">
+						<a href="#" class="btn_box big"><span class="btn_box_text">취소</span></a>
+						<a href="#" class="btn_box big primary"><i class="ico_check"></i><span class="btn_box_text">등록</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer_wrap">
+			<p class="footer_copy">Copyright © MQNIC CO., LTD</p>
+		</footer>
+
+		<script>
+			menuRock("#menu02 , #menu02_01");
+
+			// file upload
+			const file_upload_zone = document.querySelectorAll(".file_upload_zone");
+			if (!!file_upload_zone) {
+				file_upload_zone.forEach((item) => {
+					const file_upload_item = item.querySelector(".file_origin");
+					file_upload_item.addEventListener("change", () => {
+						item.querySelector(".file_upload_data_row").style.display = "block";
+					});
+				});
+			}
+
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+		</script>
+	</div>
+</body>
+
+</html>

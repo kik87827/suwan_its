@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/_head.html')
+<body class="front_body map_api_body">
+	<div class="page_wrap">
+		@@include('./include/_header.html')
+		<section class="middle_wrap">
+			@@include('./include/_left.html')
+			<div class="middle_right_cols">
+				<div class="pagemap_list_wrap">
+					<ul class="pagemap_list">
+						<li><a href="#" class="ico_pagemap_home"><span class="hdtext">HOME</span></a></li>
+						<li><a href="#" class="pagemap_menu">홈페이지 관리</a></li>
+						<li><a href="#" class="pagemap_menu emp">문의처</a></li>
+					</ul>
+				</div>
+				<div class="middle_right_title_wrap">
+					<h2 class="content_title">문의처</h2>
+					<div class="btn_boxtab_row">
+						<a href="#" class="btn_box small primary"><span class="btn_box_text">한국어</span></a>
+						<a href="#" class="btn_box small"><span class="btn_box_text">영어</span></a>
+					</div>
+				</div>
+				<div class="middle_right_content_wrap">
+					<div class="detail_render_item_wrap">
+						<div class="detail_render_item">
+							<p class="detail_render_title">홈페이지 및 회원관리</p>
+							<div class="detail_render_content">
+								<div class="dr_img_cols"><img src="./assets/images/home01@2x.png" alt=""></div>
+								<div class="dr_spec_cols">
+									<table class="dr_spec_table">
+										<tr>
+											<th><span class="dr_spec_label">담당자</span></th>
+											<td><input type="text" class="form_input small" placeholder="담당자"></td>
+										</tr>
+										<tr>
+											<th><span class="dr_spec_label">전화</span></th>
+											<td><input type="text" class="form_input small" placeholder="전화"></td>
+										</tr>
+										<tr>
+											<th><span class="dr_spec_label">팩스</span></th>
+											<td><input type="text" class="form_input small" placeholder="팩스"></td>
+										</tr>
+										<tr>
+											<th><span class="dr_spec_label">이메일</span></th>
+											<td><input type="text" class="form_input small" placeholder="이메일"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="detail_render_item">
+							<p class="detail_render_title">대내외 협력</p>
+							<div class="detail_render_content">
+								<div class="dr_img_cols"><img src="./assets/images/home02@2x.png" alt=""></div>
+								<div class="dr_spec_cols">
+									<table class="dr_spec_table">
+										<tr>
+											<th><span class="dr_spec_label">담당자</span></th>
+											<td><input type="text" class="form_input small" placeholder="담당자"></td>
+										</tr>
+										<tr>
+											<th><span class="dr_spec_label">전화</span></th>
+											<td><input type="text" class="form_input small" placeholder="전화"></td>
+										</tr>
+										<tr>
+											<th><span class="dr_spec_label">팩스</span></th>
+											<td><input type="text" class="form_input small" placeholder="팩스"></td>
+										</tr>
+										<tr>
+											<th><span class="dr_spec_label">이메일</span></th>
+											<td><input type="text" class="form_input small" placeholder="이메일"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="detail_render_item">
+							<p class="detail_render_title">해외사업 지원</p>
+							<div class="detail_render_content">
+								<div class="dr_img_cols"><img src="./assets/images/home03@2x.png" alt=""></div>
+								<div class="dr_spec_cols">
+									<table class="dr_spec_table">
+										<tr>
+											<th><span class="dr_spec_label">담당자</span></th>
+											<td><input type="text" class="form_input small" placeholder="담당자"></td>
+										</tr>
+										<tr>
+											<th><span class="dr_spec_label">전화</span></th>
+											<td><input type="text" class="form_input small" placeholder="전화"></td>
+										</tr>
+										<tr>
+											<th><span class="dr_spec_label">팩스</span></th>
+											<td><input type="text" class="form_input small" placeholder="팩스"></td>
+										</tr>
+										<tr>
+											<th><span class="dr_spec_label">이메일</span></th>
+											<td><input type="text" class="form_input small" placeholder="이메일"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<div class="btn_submit_row">
+						<a href="#" class="btn_box big"><span class="btn_box_text">취소</span></a>
+						<a href="#" class="btn_box big primary"><i class="ico_check"></i><span class="btn_box_text">저장</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		@@include('./include/_footer.html')
+
+		<script>
+			menuRock("#menu03 , #menu03_02");
+
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			
+		</script>
+	</div>
+</body>
+</html>

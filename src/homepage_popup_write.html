@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/_head.html')
+<body class="front_body map_api_body">
+	<div class="page_wrap">
+		@@include('./include/_header.html')
+		<section class="middle_wrap">
+			@@include('./include/_left.html')
+			<div class="middle_right_cols">
+				<div class="pagemap_list_wrap">
+					<ul class="pagemap_list">
+						<li><a href="#" class="ico_pagemap_home"><span class="hdtext">HOME</span></a></li>
+						<li><a href="#" class="pagemap_menu">홈페이지 관리</a></li>
+						<li><a href="#" class="pagemap_menu emp">팝업</a></li>
+					</ul>
+				</div>
+				<div class="middle_right_title_wrap">
+					<h2 class="content_title">팝업</h2>
+				</div>
+				<div class="middle_right_content_wrap">
+					<div class="form_view_table_wrap">
+						<table class="form_view_table">
+							<colgroup>
+								<col style="width:140px" />
+								<col />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><span class="form_view_label">제목</span></th>
+									<td><input type="text" class="form_input" placeholder="제목"></td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">언어</span></th>
+									<td>
+										<div class="props_item_list_wrap">
+											<ul class="props_item_list">
+												<li>
+													<div class="props_item">
+														<input type="radio" id="lang_01" name="lang" class="props_form" checked>
+														<label for="lang_01" class="props_label">한국어</label>
+													</div>
+												</li>
+												<li>
+													<div class="props_item">
+														<input type="radio" id="lang_02" name="lang" class="props_form">
+														<label for="lang_02" class="props_label">영어</label>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">URL</span></th>
+									<td>
+										<div class="flex_form_wrap">
+											<div class="flex_form_long"><input type="text" class="form_input" placeholder="URL"></div>
+											<div class="flex_form_short">
+												<div class="props_item">
+													<input type="checkbox" id="url_form" class="props_form">
+													<label for="url_form" class="props_label">URL 연결 여부</label>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">게시기간</span></th>
+									<td>
+										<div class="flex_form_wrap">
+											<div class="flex_form_cols">
+												<div class="inline_form_wrap">
+													<div class="inline_form_cols">
+														<div class="tui-datepicker-input-wrap">
+															<div class="tui-datepicker-input" value="2023-07-19">
+																<input type="text" id="datepicker-input" class="input_tui_calendar">
+																<span class="tui-ico-date"></span>
+															</div>
+															<div id="map_date_render" class="ui_picker_render"></div>
+														</div>
+													</div>
+													<div class="inline_form_cols"><span class="inline_form_else">~</span></div>
+													<div class="inline_form_cols">
+														<div class="tui-datepicker-input-wrap">
+															<div class="tui-datepicker-input" value="2023-07-19">
+																<input type="text" id="datepicker-input2" class="input_tui_calendar">
+																<span class="tui-ico-date"></span>
+															</div>
+															<div id="map_date_render2" class="ui_picker_render"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="flex_form_cols">
+												<div class="props_item">
+													<input type="checkbox" id="show_is" class="props_form">
+													<label for="show_is" class="props_label">게시 여부</label>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span class="form_view_label">팝업 형식</span></th>
+									<td>
+										<div class="td_block_wrap" id="props_tab_wrap">
+											<div class="td_block">
+												<div class="props_item_list_wrap">
+													<ul class="props_item_list">
+														<li>
+															<div class="props_item">
+																<input type="radio" id="type_01" name="type" class="props_form" data-target="#type_01_cont" checked>
+																<label for="type_01" class="props_label">이미지 첨부</label>
+															</div>
+														</li>
+														<li>
+															<div class="props_item">
+																<input type="radio" id="type_02" name="type" class="props_form" data-target="#type_02_cont">
+																<label for="type_02" class="props_label">텍스트 입력</label>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="td_block">
+												<div class="td_cont tab_cont active" id="type_01_cont">
+													<div class="file_upload_zone">
+														<div class="file_upload_btn_row">
+															<div class="file_upload_item">
+																<i class="file_upload_ico"></i>
+																<span class="file_upload_text">파일찾기</span>
+																<input type="file" class="file_origin">
+															</div>
+															<p class="file_placeholder">400px X 390px, .jpg/.png, 이미지 첨부는 최대 1개까지 가능합니다</p>
+														</div>
+														<div class="file_upload_data_row">
+															<ul class="upload_data_text_list">
+																<li>
+																	<div class="upload_data_text_item">
+																		<span class="upload_data_text">파일명.mp4</span>
+																		<button type="button" class="btn_upload_del"></button>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr id="type_02_cont" class="tab_cont">
+									<td colspan="2" class="colspan_td">
+										<div class="editor_insert_wrap">
+											<div style="background:#ddd;display:flex;align-items:center;justify-content:center;min-height:300px;color:#000;">
+												EDITOR
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_submit_row">
+						<a href="#" class="btn_box big"><span class="btn_box_text">취소</span></a>
+						<a href="#" class="btn_box big primary"><i class="ico_check"></i><span class="btn_box_text">등록</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		@@include('./include/_footer.html')
+
+		<script>
+			menuRock("#menu03 , #menu03_01");
+
+			var datepicker = new tui.DatePicker('#map_date_render', {
+				date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-input',
+					format: 'yyyy-MM-dd'
+				}
+			});
+
+			var datepicker2 = new tui.DatePicker('#map_date_render2', {
+				date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-input2',
+					format: 'yyyy-MM-dd'
+				}
+			});
+
+			
+			propsTab();
+			function propsTab(){
+				const props_tab_wrap = document.querySelector("#props_tab_wrap");
+				const props_tab_cont = document.querySelectorAll(".tab_cont");
+				const props_tab = props_tab_wrap.querySelectorAll("[data-target]");
+				props_tab.forEach((item)=>{
+					item.addEventListener("click",(e)=>{
+						const thisItem = e.currentTarget;
+						const thisTarget = document.querySelector(thisItem.dataset.target);
+						if(!!thisTarget){
+							props_tab_cont.forEach((item)=>{
+								item.classList.remove("active");
+							})
+							if(item.checked){
+								thisTarget.classList.add("active");
+							}
+						}
+					});
+				})
+			}
+
+			// file upload
+			const file_upload_zone = document.querySelectorAll(".file_upload_zone");
+			if(!!file_upload_zone){
+				file_upload_zone.forEach((item)=>{
+					const file_upload_item = item.querySelector(".file_origin");
+					file_upload_item.addEventListener("change",()=>{
+						item.querySelector(".file_upload_data_row").style.display = "block";
+					});
+				});
+			}
+
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			
+		</script>
+	</div>
+</body>
+</html>

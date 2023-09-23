@@ -1,0 +1,24 @@
+
+@use "sass:math";
+
+$primary : #01a37c;
+
+
+$warn : #e84854;
+
+
+@function rem($value) {
+    $remValue: math.div($value, 16) + rem;	
+    @return $remValue;
+}
+
+
+
+
+@mixin fontTransform {
+    transform: skew(.5deg);
+}
+
+@mixin clamp ($count) {
+    color:#000000;word-break:break-all;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:$count;overflow: hidden;
+}

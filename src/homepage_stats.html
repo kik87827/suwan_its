@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/_head.html')
+<body class="front_body map_api_body">
+	<div class="page_wrap">
+		@@include('./include/_header.html')
+		<section class="middle_wrap">
+			@@include('./include/_left.html')
+			<div class="middle_right_cols">
+				<div class="pagemap_list_wrap">
+					<ul class="pagemap_list">
+						<li><a href="#" class="ico_pagemap_home"><span class="hdtext">HOME</span></a></li>
+						<li><a href="#" class="pagemap_menu">홈페이지 관리</a></li>
+						<li><a href="#" class="pagemap_menu emp">홈페이지 통계</a></li>
+					</ul>
+				</div>
+				<div class="middle_right_title_wrap">
+					<h2 class="content_title">홈페이지 통계</h2>
+				</div>
+				<div class="middle_right_content_wrap">
+					<div class="search_field_wrap type2">
+						<div class="search_field_cols">
+							<div class="search_field_form_group">
+								<div class="search_field_label_cols"><span class="sf_label">시작일</span></div>
+								<div class="search_field_form_cols">
+									<div class="tui-datepicker-input-wrap">
+										<div class="tui-datepicker-input" value="2023-07-19">
+											<input type="text" id="datepicker-input" class="input_tui_calendar">
+											<span class="tui-ico-date"></span>
+										</div>
+										<div id="map_date_render" class="ui_picker_render"></div>
+									</div>
+								</div>
+							</div>
+							<div class="search_field_form_group">
+								<div class="search_field_label_cols"><span class="sf_label">종료일</span></div>
+								<div class="search_field_form_cols">
+									<div class="tui-datepicker-input-wrap">
+										<div class="tui-datepicker-input" value="2023-07-19">
+											<input type="text" id="datepicker-input2" class="input_tui_calendar">
+											<span class="tui-ico-date"></span>
+										</div>
+										<div id="map_date_render2" class="ui_picker_render"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="search_field_cols">
+							<div class="form_inline_group">
+								<div class="form_inline_cols">
+									<select class="form_select" style="width:150px">
+										<option value="0">선택</option>
+										<option value="1" selected>맞춤</option>
+									</select>
+								</div>
+								<div class="form_inline_cols">
+									<a href="#" class="btn_box gray big inline"><span class="btn_box_text">적용</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="block_section_wrap">
+						<div class="block_section">
+							<div class="block_section_title">일일 유입량</div>
+							<div class="block_section_content">
+								<div class="block_depth_section">
+									<p class="block_depth_title">한국어</p>
+									<div class="block_depth_content">
+										<!-- chart -->
+										<div style="display:flex;justify-content: center;align-items: center;height:160px;background:#ccc;">
+											chart
+										</div>
+										<!-- // chart -->
+									</div>
+								</div>
+								<div class="block_depth_section">
+									<p class="block_depth_title">영어</p>
+									<div class="block_depth_content">
+										<!-- chart -->
+										<div style="display:flex;justify-content: center;align-items: center;height:160px;background:#ccc;">
+											chart
+										</div>
+										<!-- // chart -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="block_section">
+							<div class="block_section_title">페이지별 방문자</div>
+							<div class="block_section_content">
+								<div class="block_depth_section">
+									<p class="block_depth_title">한국어</p>
+									<div class="block_depth_content">
+										<!-- chart -->
+										<div style="display:flex;justify-content: center;align-items: center;height:160px;background:#ccc;">
+											chart
+										</div>
+										<!-- // chart -->
+									</div>
+								</div>
+								<div class="block_depth_section">
+									<p class="block_depth_title">영어</p>
+									<div class="block_depth_content">
+										<!-- chart -->
+										<div style="display:flex;justify-content: center;align-items: center;height:160px;background:#ccc;">
+											chart
+										</div>
+										<!-- // chart -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="block_section">
+							<div class="block_section_title">국가별 접속 통계</div>
+							<div class="block_section_content">
+								<div class="block_depth_section">
+									<p class="block_depth_title">한국어</p>
+									<div class="block_depth_content">
+										<!-- chart -->
+										<div style="display:flex;justify-content: center;align-items: center;height:160px;background:#ccc;">
+											chart
+										</div>
+										<!-- // chart -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		@@include('./include/_footer.html')
+
+		<script>
+			menuRock("#menu03 , #menu03_03");
+
+			var datepicker = new tui.DatePicker('#map_date_render', {
+				date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-input',
+					format: 'yyyy-MM-dd'
+				}
+			});
+
+			var datepicker2 = new tui.DatePicker('#map_date_render2', {
+				date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-input2',
+					format: 'yyyy-MM-dd'
+				}
+			});
+
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			
+		</script>
+	</div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1440" />
+	<link rel="stylesheet" href="./assets/css/common.css" />
+	<script src="./assets/js/jquery-3.4.1.min.js"></script>
+	<script src="./assets/js/dynamicListener.min.js"></script>
+	<script src="./assets/js/swiper.min.js"></script>
+	<script src="./assets/js/tui-time-picker.js"></script>
+	<script src="./assets/js/tui-date-picker.js"></script>
+	<script src="./assets/js/ui.js"></script>
+
+	<title></title>
+</head>
+
+<body class="front_body map_api_body">
+	<div class="page_wrap">
+		<section class="guide_comp_wrap">
+			<div class="guide_comp_item">
+				<p class="guide_comp_title">form</p>
+				<div class="guide_comp_content">
+					<ul class="props_item_list">
+						<li>
+							<div class="props_item">
+								<input type="checkbox" id="saveid" class="props_form">
+								<label for="saveid" class="props_label">아이디 저장</label>
+							</div>
+						</li>
+					</ul>
+					<ul class="props_item_list">
+						<li>
+							<div class="props_item">
+								<input type="radio" id="lang_01" name="lang" class="props_form">
+								<label for="lang_01" class="props_label">한국어</label>
+							</div>
+						</li>
+						<li>
+							<div class="props_item">
+								<input type="radio" id="lang_02" name="lang" class="props_form">
+								<label for="lang_02" class="props_label">영어</label>
+							</div>
+						</li>
+					</ul>
+					<div class="tui-datepicker-input-wrap">
+						<div class="tui-datepicker-input" value="2023-07-19">
+							<input type="text" id="datepicker-input" class="input_tui_calendar">
+							<span class="tui-ico-date"></span>
+						</div>
+						<div id="map_date_render" class="ui_picker_render"></div>
+					</div>
+					<div>
+						<select class="form_select">
+							<option value="0">전체</option>
+							<option value="1">제목</option>
+							<option value="2">내용</option>
+						</select>
+					</div>
+					<div>
+						<input type="text" class="form_input" placeholder="제목">
+					</div>
+					<div>
+						<div class="file_upload_item">
+							<i class="file_upload_ico"></i>
+							<span class="file_upload_text">파일찾기</span>
+							<input type="file" class="file_origin">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="guide_comp_item">
+				<p class="guide_comp_title">login form</p>
+				<div class="guide_comp_content">
+					<div class="form_item_wrap">
+						<div class="form_item">
+							<div class="form_label">ID</div>
+							<div class="form_field">
+								<div class="form_input_component">
+									<input type="text" class="form_input" placeholder="아이디">
+									<i class="form_ico"></i>
+								</div>
+							</div>
+						</div>
+						<div class="form_item">
+							<div class="form_label">PASSWORD</div>
+							<div class="form_field">
+								<div class="form_input_component">
+									<input type="text" class="form_input" placeholder="비밀번호">
+									<i class="form_ico ico_pw"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="guide_comp_item">
+				<p class="guide_comp_title">button</p>
+				<div class="guide_comp_content">
+					<div class="btn_boxtab_row">
+						<a href="#" class="btn_box small primary"><span class="btn_box_text">한국어</span></a>
+						<a href="#" class="btn_box small"><span class="btn_box_text">영어</span></a>
+					</div>
+					<div class="btn_submit_row">
+						<a href="#" class="btn_box big gray"><span class="btn_box_text">삭제</span></a>
+						<a href="#" class="btn_box big"><span class="btn_box_text">취소</span></a>
+						<a href="#" class="btn_box big primary"><i class="ico_check"></i><span class="btn_box_text">등록</span></a>
+					</div>
+					<div class="">
+						<a href="#" class="btn_box big inline primary"><i class="ico_plus"></i><span class="btn_box_text">등록</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script>
+			var datepicker = new tui.DatePicker('#map_date_render', {
+				date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-input',
+					format: 'yyyy-MM-dd'
+				}
+			});
+
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			if (url_2 === "loading") {}
+		</script>
+	</div>
+</body>
+
+</html>
